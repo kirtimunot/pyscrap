@@ -5,8 +5,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 def send(filename):
-    from_add='jain.kirti13@gmail.com'
-    to_add='kirtimunot@rediffmail.com'
+    from_add='from@gmail.com'
+    to_add='to@gmail.com'
     sub="Finance report"
 
     msg=MIMEMultipart()
@@ -26,7 +26,7 @@ def send(filename):
     message=msg.as_string()
     server=smtplib.SMTP('smtp.gmail.com',587)
     server.starttls()
-    server.login(from_add,'ftehukruiytkhrlb')
+    server.login(from_add,'Your_password')  #provide your password
     #msg="hey mail using python script"
     server.sendmail(from_add,to_add,message)
 
